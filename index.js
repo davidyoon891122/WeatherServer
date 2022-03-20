@@ -1,9 +1,13 @@
-import express from "express"
+import express, { json } from "express"
+import { FileManager } from "./readFiles.js";
+
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-    res.send("Hello Weather");
+    const fileManager = new FileManager()
+    res.send(fileManager.getWeatherKey());
+
 });
 
 app.listen(port, () => {
