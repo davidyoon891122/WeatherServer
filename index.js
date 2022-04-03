@@ -24,7 +24,7 @@ app.get('/weather', (req, res) => {
         return res.status(403).send('lat 비어 있음')
     }
    
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=&appid=767cd7ad6286d493b227a37032a0bcd6&lang=kr&units=metric}`;
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=&appid=767cd7ad6286d493b227a37032a0bcd6&lang=kr&units=metric`;
     axios.get(url)
     .then(response => {
         res.send(response.data)
