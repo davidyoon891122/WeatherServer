@@ -23,9 +23,8 @@ app.get('/weather', (req, res) => {
     if (lat === '' || lat == null || lon === '' || lon == null) {
         return res.status(403).send('lat 비어 있음')
     }
-    const fileManager = new FileManager()
-    const apiKey = fileManager.getWeatherKey()
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=&appid=${apiKey}&lang=kr}&units=metics}`;
+   
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=&appid=767cd7ad6286d493b227a37032a0bcd6&lang=kr}&units=metics}`;
     axios.get(url)
     .then(response => {
         res.send(response.data)
